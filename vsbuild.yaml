@@ -16,4 +16,4 @@ template:
       myCustomVar2: my value 2
   steps:
     preBuild:
-      - task: credscan@1.*
+      - task: credscan@1
