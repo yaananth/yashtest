@@ -69,7 +69,7 @@ phases:
           - phase: preRestore
           - phase: restore
             steps:
-              - task: NuGetInstaller@1.*
+              - task: NuGetInstaller@1
                 inputs:
                   solution: "{{@root.restoreSolution}}"
                   restoreMode: restore
@@ -78,7 +78,7 @@ phases:
           - phase: preBuild
           - phase: build
             steps:
-              - task: VSBuild@1.*
+              - task: VSBuild@1
                 inputs:
                   solution: "{{@root.buildSolution}}"
                   msbuildArgs: "{{@root.buildArguments}}"
@@ -103,7 +103,7 @@ phases:
           - phase: preSymbols
           - phase: symbols
             steps:
-              - task: PublishSymbols@1.*
+              - task: PublishSymbols@1
                 inputs:
                   SearchPattern: "{{@root.symbolsPattern}}"
                   SymbolsFolder: "{{@root.symbolsRoot}}"
@@ -115,7 +115,7 @@ phases:
           - phase: preDrop
           - phase: drop
             steps:
-              - task: CopyFiles@2.*
+              - task: CopyFiles@2
                 inputs:
                   Contents: "{{#each @root.copyPattern}}{{#unless @first}}\n{{/unless}}{{this}}{{/each}}"
                   SourceFolder: "{{@root.copyRoot}}"
