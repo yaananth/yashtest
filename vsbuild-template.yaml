@@ -93,7 +93,7 @@ phases:
           - phase: preTest
           - phase: test
             steps:
-              - task: VSTest
+              - task: VSTest@1
                 inputs:
                   testAssemblyVer2: "{{#each @root.testPattern}}{{#unless @first}}\n{{/unless}}{{this}}{{/each}}"
                   searchFolder: "{{@root.testRoot}}"
