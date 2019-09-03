@@ -1,0 +1,14 @@
+name: Test1
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on:  ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v1
