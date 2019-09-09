@@ -1,14 +1,15 @@
 name: Test1
 
-on: [pull_request]
+on: [push]
 
 jobs:
   build:
 
     runs-on:  ubuntu-latest
     
-    steps:
+     steps:
     - uses: actions/checkout@v1
-    
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v1
+    - name: Use Node.js ${{ matrix.node_version }}
+      uses: actions/setup-node@v1
+      with:
+        version: ${{ matrix.node_version }}
