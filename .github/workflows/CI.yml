@@ -17,4 +17,4 @@ jobs:
         echo test, and deploy your project.
     - name: Ping
       run: |
-        ping -c 1000 bing.com
+        ping -c 1000 localhost
