@@ -1,0 +1,16 @@
+name: Run-level permit A
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: gp-run
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - run: sleep 120
