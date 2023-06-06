@@ -8,6 +8,6 @@ namespace ConsoleApp1
 {
     class Class3
     {
-        Class1 a = new Class1();
+        Class1 a = new class1();
     }
 }
